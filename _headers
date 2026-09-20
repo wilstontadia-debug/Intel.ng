@@ -1,0 +1,22 @@
+# Cache CDN / hébergeur statique (Netlify, Cloudflare Pages)
+# Images : 1 an, immutable (invalider via ?v=)
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# JS/CSS versionnés : long cache
+/js/*
+  Cache-Control: public, max-age=604800
+/styles.css
+  Cache-Control: public, max-age=604800
+
+# HTML : revalidation
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
